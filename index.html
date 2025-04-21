@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Gears</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .logo {
+      max-width: 120px;
+    }
+    .cart-icon {
+      font-size: 24px;
+      position: relative;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    .intro {
+      margin: 30px 0;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .produto {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .produto img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .produto h3 {
+      margin: 10px 0;
+    }
+    .produto button {
+      padding: 8px 12px;
+      background: #00ffcc;
+      border: none;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .produto button:hover {
+      background: #00ccaa;
+    }
+    .cart-panel {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      overflow-y: auto;
+      transition: right 0.3s ease-in-out;
+      z-index: 1000;
+    }
+    .cart-panel.open {
+      right: 0;
+    }
+    .social {
+      margin-top: 40px;
+    }
+    .social a {
+      color: white;
+      font-size: 24px;
+      margin: 0 10px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <img class="logo" src="https://via.placeholder.com/150x80?text=LOGO" alt="Logo Custom Gears" />
+    <div class="cart-icon" onclick="toggleCart()">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cart-count">0</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <div class="intro">
+    <p>Escolha sua engrenagem personalizada favorita!</p>
+  </div>
+
+  <div class="produtos">
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200?text=Produto+1" alt="Produto 1">
+      <h3>Engrenagem Azul</h3>
+      <button onclick="addToCart('Engrenagem Azul')">Adicionar ao carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200?text=Produto+2" alt="Produto 2">
+      <h3>Engrenagem Vermelha</h3>
+      <button onclick="addToCart('Engrenagem Vermelha')">Adicionar ao carrinho</button>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x200?text=Produto+3" alt="Produto 3">
+      <h3>Engrenagem Dourada</h3>
+      <button onclick="addToCart('Engrenagem Dourada')">Adicionar ao carrinho</button>
+    </div>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <h2>Carrinho</h2>
+    <ul id="cart-items"></ul>
+  </div>
+
+  <div class="social">
+    <a href="https://wa.me/SEUNUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/SEUINSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/SEUFACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(produto) {
+      cart.push(produto);
+      document.getElementById('cart-count').textContent = cart.length;
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById('cart-items');
+      lista.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        lista.appendChild(li);
+      });
+    }
+
+    function toggleCart() {
+      document.getElementById('cart-panel').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
+
