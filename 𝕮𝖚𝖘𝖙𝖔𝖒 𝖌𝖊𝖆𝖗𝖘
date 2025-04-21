@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Gears</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      margin-bottom: 30px;
+    }
+    .logo {
+      max-width: 150px;
+    }
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav a:hover {
+      color: #00ffcc;
+    }
+    .social {
+      margin-top: 40px;
+    }
+    .social a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #ffffff;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+    .social a:hover {
+      color: #00ffcc;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <!-- Troque o 𝕮𝖚𝖘𝖙𝖔𝖒 𝖌𝖊𝖆𝖗𝖘 pelo link da sua logo -->
+    <img class="logo" src="https://via.placeholder.com/150x80?text=LOGO" alt="Logo Custom Gears" />
+    <h1>Custom Gears</h1>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Produtos</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <p>Bem-vindo à Custom Gears! Personalize seu estilo com exclusividade.</p>
+
+  <div class="social">
+    <a href="https://wa.me/41 999737694" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/custom_gears17" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/customgears17" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+</body>
+</html>
